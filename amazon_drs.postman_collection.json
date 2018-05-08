@@ -1,0 +1,785 @@
+{
+    "info": {
+        "_postman_id": "2c898b21-05f8-4a9a-8bde-7562f5f99152",
+        "name": "Amazon DRS",
+        "description": "Amazon Dash Replenishment Service",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "CancelTestOrder",
+            "description": "",
+            "item": [
+                {
+                    "name": "CancelTestOrder",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "x-amzn-accept-type",
+                                "value": "com.amazon.dash.replenishment.DrsCancelTestOrdersResult@1.0"
+                            },
+                            {
+                                "key": "x-amzn-type-version",
+                                "value": "com.amazon.dash.replenishment.DrsCancelTestOrdersInput@1.0"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"mostRecentlyActiveDate\" : \"2015-12-21T10:00:00Z\"\n}\n"
+                        },
+                        "url": {
+                            "raw": "https://dash-replenishment-service-na.amazon.com/testOrders/slots/{{SLOT_ID}}",
+                            "protocol": "https",
+                            "host": [
+                                "dash-replenishment-service-na",
+                                "amazon",
+                                "com"
+                            ],
+                            "path": [
+                                "testOrders",
+                                "slots",
+                                "{{SLOT_ID}}"
+                            ]
+                        },
+                        "description": "CancelTestOrder allows developers to cancel test orders for one or all slots in the device.\n\nCancel test order for a specific SLOT_ID"
+                    },
+                    "response": [
+                        {
+                            "id": "2d95801f-3446-48cb-b90d-98fdaf1aeced",
+                            "name": "CancelTestOrder",
+                            "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "x-amzn-accept-type",
+                                        "value": "com.amazon.dash.replenishment.DrsCancelTestOrdersResult@1.0"
+                                    },
+                                    {
+                                        "key": "x-amzn-type-version",
+                                        "value": "com.amazon.dash.replenishment.DrsCancelTestOrdersInput@1.0"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"mostRecentlyActiveDate\" : \"2015-12-21T10:00:00Z\"\n}\n"
+                                },
+                                "url": {
+                                    "raw": "https://dash-replenishment-service-na.amazon.com/testOrders/slots/{{SLOT_ID}}",
+                                    "protocol": "https",
+                                    "host": [
+                                        "dash-replenishment-service-na",
+                                        "amazon",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "testOrders",
+                                        "slots",
+                                        "{{SLOT_ID}}"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "x-amzn-type-version",
+                                    "value": "com.amazon.dash.replenishment.DrsCancelTestOrdersResult@1.0",
+                                    "description": "",
+                                    "type": "text",
+                                    "name": "x-amzn-type-version"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "HTTP/1.1 200 OK\nx-amzn-type-version: com.amazon.dash.replenishment.DrsCancelTestOrdersResult@1.0\n{\n  \"slotOrderStatuses\": [\n    {\n      \"orderStatus\": \"NO_ORDER_IN_PROGRESS\",\n      \"slotId\": \"slot1\"\n    },\n    {\n      \"orderStatus\": \"NO_ORDER_IN_PROGRESS\",\n      \"slotId\": \"slot2\"\n    }\n  ]\n}\n"
+                        }
+                    ]
+                },
+                {
+                    "name": "CancelTestOrder AllSlots",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "x-amzn-accept-type",
+                                "value": "com.amazon.dash.replenishment.DrsCancelTestOrdersResult@1.0"
+                            },
+                            {
+                                "key": "x-amzn-type-version",
+                                "value": "com.amazon.dash.replenishment.DrsCancelTestOrdersInput@1.0"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"mostRecentlyActiveDate\" : \"2015-12-21T10:00:00Z\"\n}\n"
+                        },
+                        "url": {
+                            "raw": "https://dash-replenishment-service-na.amazon.com/testOrders",
+                            "protocol": "https",
+                            "host": [
+                                "dash-replenishment-service-na",
+                                "amazon",
+                                "com"
+                            ],
+                            "path": [
+                                "testOrders"
+                            ]
+                        },
+                        "description": "CancelTestOrder allows developers to cancel test orders for one or all slots in the device.\n\nCancel test orders on all slots"
+                    },
+                    "response": [
+                        {
+                            "id": "73c793fe-b9c8-4220-aa21-696a35275aa7",
+                            "name": "CancelTestOrder AllSlots",
+                            "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "x-amzn-accept-type",
+                                        "value": "com.amazon.dash.replenishment.DrsCancelTestOrdersResult@1.0"
+                                    },
+                                    {
+                                        "key": "x-amzn-type-version",
+                                        "value": "com.amazon.dash.replenishment.DrsCancelTestOrdersInput@1.0"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"mostRecentlyActiveDate\" : \"2015-12-21T10:00:00Z\"\n}\n"
+                                },
+                                "url": {
+                                    "raw": "https://dash-replenishment-service-na.amazon.com/testOrders",
+                                    "protocol": "https",
+                                    "host": [
+                                        "dash-replenishment-service-na",
+                                        "amazon",
+                                        "com"
+                                    ],
+                                    "path": [
+                                        "testOrders"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "x-amzn-type-version",
+                                    "value": "com.amazon.dash.replenishment.DrsCancelTestOrdersResult@1.0",
+                                    "description": "",
+                                    "type": "text",
+                                    "name": "x-amzn-type-version"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n    \"slotOrderStatuses\": [\n        {\n            \"orderStatus\": \"NO_ORDER_IN_PROGRESS\",\n            \"slotId\": \"slot1\"\n        },\n        {\n            \"orderStatus\": \"NO_ORDER_IN_PROGRESS\",\n            \"slotId\": \"slot2\"\n        }\n    ]\n}"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Replenish",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "x-amzn-accept-type",
+                        "value": "com.amazon.dash.replenishment.DrsReplenishResult@1.0"
+                    },
+                    {
+                        "key": "x-amzn-type-version",
+                        "value": "com.amazon.dash.replenishment.DrsReplenishInput@1.0"
+                    }
+                ],
+                "body": {},
+                "url": {
+                    "raw": "https://dash-replenishment-service-na.amazon.com/replenish/{{SLOT_ID}}",
+                    "protocol": "https",
+                    "host": [
+                        "dash-replenishment-service-na",
+                        "amazon",
+                        "com"
+                    ],
+                    "path": [
+                        "replenish",
+                        "{{SLOT_ID}}"
+                    ]
+                },
+                "description": "Replenish is the core API used to place an order for a device/slot combination. Calling the Replenish endpoint will order the ASIN selected by your customer during device registration."
+            },
+            "response": [
+                {
+                    "id": "7d32ef28-5369-457c-a06c-588b74702859",
+                    "name": "Replenish",
+                    "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "x-amzn-accept-type",
+                                "value": " com.amazon.dash.replenishment.DrsReplenishResult@1.0"
+                            },
+                            {
+                                "key": "x-amzn-type-version",
+                                "value": "com.amazon.dash.replenishment.DrsReplenishResult@1.0"
+                            }
+                        ],
+                        "body": {},
+                        "url": {
+                            "raw": "https://dash-replenishment-service-na.amazon.com/replenish/{{SLOT_ID}}",
+                            "protocol": "https",
+                            "host": [
+                                "dash-replenishment-service-na",
+                                "amazon",
+                                "com"
+                            ],
+                            "path": [
+                                "replenish",
+                                "{{SLOT_ID}}"
+                            ]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "json",
+                    "header": [
+                        {
+                            "key": "x-amzn-type-version",
+                            "value": "com.amazon.dash.replenishment.DrsReplenishResult@1.0",
+                            "description": "",
+                            "type": "text",
+                            "name": "x-amzn-type-version"
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json",
+                            "description": "",
+                            "type": "text",
+                            "name": "Content-Type"
+                        }
+                    ],
+                    "cookie": [],
+                    "body": "{\n    \"eventInstanceId\" : \"SOME_EVENT_INSTANCE\",\n    \"detailCode\" : \"STANDARD_ORDER_PLACED\"\n}\n"
+                }
+            ]
+        },
+        {
+            "name": "SlotStatus",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "x-amzn-accept-type",
+                        "value": "com.amazon.dash.replenishment.DrsSlotStatusResult@1.0"
+                    },
+                    {
+                        "key": "x-amzn-type-version",
+                        "value": "com.amazon.dash.replenishment.DrsSlotStatusInput@1.0"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"expectedReplenishmentDate\" : \"2015-12-28T10:00:00Z\",\n    \"remainingQuantityInUnit\" : 3.5,\n    \"originalQuantityInUnit\" : 10,\n    \"totalQuantityOnHand\" : 20,\n    \"lastUseDate\" : \"2015-12-21T10:00:00Z\"\n}"
+                },
+                "url": {
+                    "raw": "https://dash-replenishment-service-na.amazon.com/slotStatus/{{SLOT_ID}}",
+                    "protocol": "https",
+                    "host": [
+                        "dash-replenishment-service-na",
+                        "amazon",
+                        "com"
+                    ],
+                    "path": [
+                        "slotStatus",
+                        "{{SLOT_ID}}"
+                    ]
+                },
+                "description": "When the contents of a slot are consumed, the device must call DRS using the SlotStatus endpoint to report on the current state of the slot."
+            },
+            "response": [
+                {
+                    "id": "afa09f5a-2ec9-4fe0-8b81-5db5bbdbfc31",
+                    "name": "SlotStatus",
+                    "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "x-amzn-accept-type",
+                                "value": "com.amazon.dash.replenishment.DrsSlotStatusResult@1.0"
+                            },
+                            {
+                                "key": "x-amzn-type-version",
+                                "value": "com.amazon.dash.replenishment.DrsSlotStatusInput@1.0"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"expectedReplenishmentDate\" : \"2015-12-28T10:00:00Z\",\n    \"remainingQuantityInUnit\" : 3.5,\n    \"originalQuantityInUnit\" : 10,\n    \"totalQuantityOnHand\" : 20,\n    \"lastUseDate\" : \"2015-12-21T10:00:00Z\"\n}"
+                        },
+                        "url": {
+                            "raw": "https://dash-replenishment-service-na.amazon.com/slotStatus/{{SLOT_ID}}",
+                            "protocol": "https",
+                            "host": [
+                                "dash-replenishment-service-na",
+                                "amazon",
+                                "com"
+                            ],
+                            "path": [
+                                "slotStatus",
+                                "{{SLOT_ID}}"
+                            ]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "",
+                    "header": [
+                        {
+                            "key": "x-amzn-type-version",
+                            "value": "com.amazon.dash.replenishment.DrsSlotStatusResult@1.0",
+                            "description": "",
+                            "type": "text",
+                            "name": "x-amzn-type-version"
+                        }
+                    ],
+                    "cookie": [],
+                    "body": ""
+                }
+            ]
+        },
+        {
+            "name": "DeviceStatus",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "x-amzn-accept-type",
+                        "value": "com.amazon.dash.replenishment.DrsDeviceStatusResult@1.0"
+                    },
+                    {
+                        "key": "x-amzn-type-version",
+                        "value": "com.amazon.dash.replenishment.DrsDeviceStatusInput@1.0"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"mostRecentlyActiveDate\" : \"2015-12-21T10:00:00Z\"\n}\n"
+                },
+                "url": {
+                    "raw": "https://dash-replenishment-service-na.amazon.com/deviceStatus",
+                    "protocol": "https",
+                    "host": [
+                        "dash-replenishment-service-na",
+                        "amazon",
+                        "com"
+                    ],
+                    "path": [
+                        "deviceStatus"
+                    ]
+                },
+                "description": "Devices must call DRS on a daily cadence to report activity."
+            },
+            "response": [
+                {
+                    "id": "bcbd2af4-6196-4a3c-a809-59fcb28a5481",
+                    "name": "DeviceStatus",
+                    "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "x-amzn-accept-type",
+                                "value": "com.amazon.dash.replenishment.DrsDeviceStatusResult@1.0"
+                            },
+                            {
+                                "key": "x-amzn-type-version",
+                                "value": "com.amazon.dash.replenishment.DrsDeviceStatusInput@1.0"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"mostRecentlyActiveDate\" : \"2015-12-21T10:00:00Z\"\n}\n"
+                        },
+                        "url": {
+                            "raw": "https://dash-replenishment-service-na.amazon.com/deviceStatus",
+                            "protocol": "https",
+                            "host": [
+                                "dash-replenishment-service-na",
+                                "amazon",
+                                "com"
+                            ],
+                            "path": [
+                                "deviceStatus"
+                            ]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "",
+                    "header": [
+                        {
+                            "key": "x-amzn-type-version",
+                            "value": "com.amazon.dash.replenishment.DrsDeviceStatusResult@1.0",
+                            "description": "",
+                            "type": "text",
+                            "name": "x-amzn-type-version"
+                        }
+                    ],
+                    "cookie": [],
+                    "body": ""
+                }
+            ]
+        },
+        {
+            "name": "Deregistration",
+            "request": {
+                "method": "DELETE",
+                "header": [
+                    {
+                        "key": "x-amzn-accept-type",
+                        "value": "com.amazon.dash.replenishment.DrsDeregisterResult@1.0"
+                    },
+                    {
+                        "key": "x-amzn-type-version",
+                        "value": "com.amazon.dash.replenishment.DrsDeregisterInput@2.0"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"mostRecentlyActiveDate\" : \"2015-12-21T10:00:00Z\"\n}\n"
+                },
+                "url": {
+                    "raw": "https://dash-replenishment-service-na.amazon.com/registration",
+                    "protocol": "https",
+                    "host": [
+                        "dash-replenishment-service-na",
+                        "amazon",
+                        "com"
+                    ],
+                    "path": [
+                        "registration"
+                    ]
+                },
+                "description": "Deregistration is used to disassociate a device from a customer’s Amazon account. This call will invalidate any LWA access tokens, refresh tokens, and authorization codes associated with the device."
+            },
+            "response": [
+                {
+                    "id": "a2e54c16-23b0-42fb-81cc-4874801f48f4",
+                    "name": "Deregistration",
+                    "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "x-amzn-accept-type",
+                                "value": "com.amazon.dash.replenishment.DrsDeregisterResult@1.0"
+                            },
+                            {
+                                "key": "x-amzn-type-version",
+                                "value": "com.amazon.dash.replenishment.DrsDeregisterInput@2.0"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"mostRecentlyActiveDate\" : \"2015-12-21T10:00:00Z\"\n}\n"
+                        },
+                        "url": {
+                            "raw": "https://dash-replenishment-service-na.amazon.com/registration",
+                            "protocol": "https",
+                            "host": [
+                                "dash-replenishment-service-na",
+                                "amazon",
+                                "com"
+                            ],
+                            "path": [
+                                "registration"
+                            ]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "",
+                    "header": [
+                        {
+                            "key": "x-amzn-type-version",
+                            "value": "com.amazon.dash.replenishment.DrsDeregisterResult@1.0",
+                            "description": "",
+                            "type": "text",
+                            "name": "x-amzn-type-version"
+                        }
+                    ],
+                    "cookie": [],
+                    "body": ""
+                }
+            ]
+        },
+        {
+            "name": "SubscriptionInfo",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "x-amzn-accept-type",
+                        "value": "com.amazon.dash.replenishment.DrsSubscriptionInfoResult@2.0"
+                    },
+                    {
+                        "key": "x-amzn-type-version",
+                        "value": "com.amazon.dash.replenishment.DrsSubscriptionInfoInput@1.0"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"mostRecentlyActiveDate\" : \"2015-12-21T10:00:00Z\"\n}\n"
+                },
+                "url": {
+                    "raw": "https://dash-replenishment-service-na.amazon.com/subscriptionInfo",
+                    "protocol": "https",
+                    "host": [
+                        "dash-replenishment-service-na",
+                        "amazon",
+                        "com"
+                    ],
+                    "path": [
+                        "subscriptionInfo"
+                    ]
+                },
+                "description": "SubscriptionInfo allows device makers to access the subscription status for specific slots assigned to registered devices."
+            },
+            "response": [
+                {
+                    "id": "888de711-827e-4be1-8098-47ec1e2c0715",
+                    "name": "SubscriptionInfo",
+                    "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "x-amzn-accept-type",
+                                "value": "com.amazon.dash.replenishment.DrsSubscriptionInfoResult@2.0"
+                            },
+                            {
+                                "key": "x-amzn-type-version",
+                                "value": "com.amazon.dash.replenishment.DrsSubscriptionInfoInput@1.0"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"mostRecentlyActiveDate\" : \"2015-12-21T10:00:00Z\"\n}\n"
+                        },
+                        "url": {
+                            "raw": "https://dash-replenishment-service-na.amazon.com/subscriptionInfo",
+                            "protocol": "https",
+                            "host": [
+                                "dash-replenishment-service-na",
+                                "amazon",
+                                "com"
+                            ],
+                            "path": [
+                                "subscriptionInfo"
+                            ]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "json",
+                    "header": [
+                        {
+                            "key": "x-amzn-type-version",
+                            "value": "com.amazon.dash.replenishment.DrsSubscriptionInfoResult@2.0",
+                            "description": "",
+                            "type": "text",
+                            "name": "x-amzn-type-version"
+                        }
+                    ],
+                    "cookie": [],
+                    "body": "{\n \"slotsSubscriptionStatus\": {\n   \"slot1\": {\n     \"productInfoList\": [{\n       \"asin\": \"string\",\n       \"quantity\": 1,\n       \"unit\": \"count\"\n     }],\n     \"subscribed\": true\n   }\n }\n}"
+                }
+            ]
+        },
+        {
+            "name": "GetOrderInfo",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "x-amzn-accept-type",
+                        "value": "com.amazon.dash.replenishment.DrsOrderInfoResult@1.0"
+                    },
+                    {
+                        "key": "x-amzn-type-version",
+                        "value": "com.amazon.dash.replenishment.DrsOrderInfoInput@1.0"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"mostRecentlyActiveDate\" : \"2015-12-21T10:00:00Z\"\n}\n"
+                },
+                "url": {
+                    "raw": "https://dash-replenishment-service-na.amazon.com/getOrderInfo/{{EVENT_INSTANCE_ID}}",
+                    "protocol": "https",
+                    "host": [
+                        "dash-replenishment-service-na",
+                        "amazon",
+                        "com"
+                    ],
+                    "path": [
+                        "getOrderInfo",
+                        "{{EVENT_INSTANCE_ID}}"
+                    ]
+                },
+                "description": "OrderInfo allows device makers to access the order status information for the specific event instance ID. Event instance ID is returned by Replenish endpoint in a successful response."
+            },
+            "response": [
+                {
+                    "id": "99e971ae-e5ad-4114-80b9-7fb8bfd375c1",
+                    "name": "GetOrderInfo",
+                    "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "x-amzn-accept-type",
+                                "value": "com.amazon.dash.replenishment.DrsOrderInfoResult@1.0"
+                            },
+                            {
+                                "key": "x-amzn-type-version",
+                                "value": "com.amazon.dash.replenishment.DrsOrderInfoInput@1.0"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"mostRecentlyActiveDate\" : \"2015-12-21T10:00:00Z\"\n}\n"
+                        },
+                        "url": {
+                            "raw": "https://dash-replenishment-service-na.amazon.com/getOrderInfo/{{EVENT_INSTANCE_ID}}",
+                            "protocol": "https",
+                            "host": [
+                                "dash-replenishment-service-na",
+                                "amazon",
+                                "com"
+                            ],
+                            "path": [
+                                "getOrderInfo",
+                                "{{EVENT_INSTANCE_ID}}"
+                            ]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "json",
+                    "header": [
+                        {
+                            "key": "x-amzn-type-version",
+                            "value": "com.amazon.dash.replenishment.DrsOrderInfoResult@1.0",
+                            "description": "",
+                            "type": "text",
+                            "name": "x-amzn-type-version"
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json",
+                            "description": "",
+                            "type": "text",
+                            "name": "Content-Type"
+                        }
+                    ],
+                    "cookie": [],
+                    "body": "{\n \"orderInfoData\": {\n   \"instanceId\": \"amzn1.dash.v2.o.--------\",\n   \"orderItems\": [\n     {\n       \"asin\": \"-------\",\n       \"expectedDeliveryDate\": \"2017-01-05T07:59:59.000Z\",\n       \"quantity\": 1,\n       \"slotId\": \"PaperTowel\",\n       \"status\": \"Pending\"\n      }\n    ]\n  }\n}\n"
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{ACCESS_TOKEN}}",
+                "type": "string"
+            }
+        ]
+    },
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "id": "5e59faab-980a-445a-a14c-7ac16f7e68a3",
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "id": "53b245d5-1763-461d-b732-112178120821",
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "id": "8be2aed4-a6cb-4a1e-b618-95a0c713ffce",
+            "key": "SLOT_ID",
+            "value": "",
+            "type": "string",
+            "description": ""
+        },
+        {
+            "id": "47e44a29-6a73-4907-9e51-88a8b4243e9c",
+            "key": "ACCESS_TOKEN",
+            "value": "",
+            "type": "string",
+            "description": ""
+        },
+        {
+            "id": "47cda3bf-55fd-4820-bed3-385cc437ccc3",
+            "key": "EVENT_INSTANCE_ID",
+            "value": "",
+            "type": "string",
+            "description": ""
+        }
+    ]
+}
